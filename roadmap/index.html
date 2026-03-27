@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roadmap — Buzzza</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background": "#131316",
+          "surface-container-low": "#1b1b1e",
+          "surface-container": "#1f1f22",
+          "on-surface": "#e4e1e6",
+          "on-surface-variant": "#ccc3d7",
+          "primary": "#d3bbff",
+          "primary-container": "#6d28d9",
+          "on-primary-container": "#dac5ff",
+          "secondary": "#4fdbc8",
+          "outline-variant": "#4a4455",
+          "tertiary": "#f1c100",
+        },
+        fontFamily: {
+          "headline": ["Space Grotesk"],
+          "body": ["Inter"],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background-color: #131316; color: #e4e1e6; }
+  .font-headline { font-family: 'Space Grotesk', sans-serif; }
+</style>
+</head>
+<body>
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(109,40,217,0.08)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<a href="/" class="flex items-center gap-2 no-underline">
+<span class="text-2xl font-bold tracking-tighter text-zinc-100 font-headline">Buzzza</span>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</a>
+<a href="/" class="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors no-underline">&larr; Back</a>
+</div>
+</nav>
+
+<main class="pt-32 pb-24 max-w-3xl mx-auto px-6">
+<div class="mb-12">
+<span class="text-xs font-bold tracking-widest uppercase text-tertiary">What's Next</span>
+<h1 class="text-4xl md:text-5xl font-headline font-bold mt-2 mb-4">Roadmap</h1>
+<p class="text-on-surface-variant text-lg">Where Buzzza is headed. Features are listed roughly in priority order.</p>
+</div>
+
+<!-- Now Available -->
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<h2 class="text-xl font-headline font-semibold">Available Now</h2>
+</div>
+<div class="space-y-4">
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-0.5">qr_code_scanner</span>
+<div>
+<h3 class="font-semibold text-on-surface">QR-Tagged Hive Management</h3>
+<p class="text-on-surface-variant text-sm mt-1">Generate, print, and scan QR codes for instant hive identification.</p>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-0.5">fact_check</span>
+<div>
+<h3 class="font-semibold text-on-surface">Inspections & Workflows</h3>
+<p class="text-on-surface-variant text-sm mt-1">Customizable inspection workflows with actions, notes, and media capture.</p>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-0.5">map</span>
+<div>
+<h3 class="font-semibold text-on-surface">Yard Management & Maps</h3>
+<p class="text-on-surface-variant text-sm mt-1">Organize hives by yard with GPS coordinates and satellite map views.</p>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-0.5">layers</span>
+<div>
+<h3 class="font-semibold text-on-surface">Bulk Operations</h3>
+<p class="text-on-surface-variant text-sm mt-1">Select multiple hives and apply inspections, labels, moves, or deactivations in batch.</p>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-0.5">history</span>
+<div>
+<h3 class="font-semibold text-on-surface">Full Inspection History</h3>
+<p class="text-on-surface-variant text-sm mt-1">Complete audit trail of every action. Search, filter, and review.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Up Next -->
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<h2 class="text-xl font-headline font-semibold">Up Next</h2>
+</div>
+<div class="space-y-4">
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-0.5">cloud_sync</span>
+<div>
+<h3 class="font-semibold text-on-surface">Cloud Sync & Multi-Device</h3>
+<p class="text-on-surface-variant text-sm mt-1">Sync your data across devices and back up to the cloud.</p>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-0.5">group</span>
+<div>
+<h3 class="font-semibold text-on-surface">Team Collaboration</h3>
+<p class="text-on-surface-variant text-sm mt-1">Share yards and hives with your team. Role-based permissions for owners, managers, and workers.</p>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-0.5">hub</span>
+<div>
+<h3 class="font-semibold text-on-surface">Queen Line Tracking</h3>
+<p class="text-on-surface-variant text-sm mt-1">Trace queen genetics and lineage across splits and re-queening events.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Future -->
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<h2 class="text-xl font-headline font-semibold">Exploring</h2>
+</div>
+<div class="space-y-4">
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-0.5">bar_chart</span>
+<div>
+<h3 class="font-semibold text-on-surface">Analytics & Reports</h3>
+<p class="text-on-surface-variant text-sm mt-1">Hive health trends, production tracking, and exportable reports.</p>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-0.5">notifications</span>
+<div>
+<h3 class="font-semibold text-on-surface">Smart Reminders</h3>
+<p class="text-on-surface-variant text-sm mt-1">Automated reminders for treatment schedules, re-queening, and inspections due.</p>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-0.5">download</span>
+<div>
+<h3 class="font-semibold text-on-surface">Data Export & Integrations</h3>
+<p class="text-on-surface-variant text-sm mt-1">Export to CSV/PDF, integrate with hive monitoring hardware and weather APIs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<footer class="bg-zinc-950 w-full border-t border-zinc-800/50 pt-12 pb-8">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<a href="/" class="flex items-center gap-2 no-underline">
+<span class="text-lg font-bold text-zinc-100 font-headline">Buzzza</span>
+</a>
+<p class="text-xs uppercase tracking-widest font-semibold text-zinc-500">
+&copy; 2026 zZz Bees LLC. All rights reserved.
+</p>
+</div>
+<div class="flex items-center gap-8">
+<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/privacy">Privacy Policy</a>
+<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/roadmap">Roadmap</a>
+</div>
+</div>
+</footer>
+</body>
+</html>
