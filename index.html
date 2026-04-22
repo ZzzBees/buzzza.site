@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Buzzza — Beekeeping, simplified.</title>
+    <title>buzZza — Beekeeping, simplified.</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
@@ -124,11 +124,16 @@
         <div class="flex items-center gap-2">
           <span
             class="text-2xl font-bold tracking-tighter text-zinc-100 font-headline"
-            >Buzzza</span
+            >buzZza</span
           >
           <div class="w-2 h-2 rounded-full bg-tertiary"></div>
         </div>
         <div class="hidden md:flex items-center gap-8">
+          <a
+            class="font-['Space_Grotesk'] tracking-tight text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
+            href="/about"
+            >About</a
+          >
           <a
             class="font-['Space_Grotesk'] tracking-tight text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
             href="#features"
@@ -138,6 +143,11 @@
             class="font-['Space_Grotesk'] tracking-tight text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
             href="/roadmap"
             >Roadmap</a
+          >
+          <a
+            class="font-['Space_Grotesk'] tracking-tight text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
+            href="/support"
+            >Support</a
           >
         </div>
         <a
@@ -167,7 +177,7 @@
         <div class="relative z-10 max-w-4xl w-full text-center space-y-8">
           <div class="flex flex-col items-center gap-6">
             <img
-              alt="Buzzza Logo"
+              alt="buzZza Logo"
               class="w-[90px] h-auto rounded-2xl shadow-[0_8px_32px_0_rgba(109,40,217,0.3)]"
               src="/assets/app-icon.png"
             />
@@ -175,7 +185,7 @@
               <h1
                 class="text-6xl md:text-8xl font-headline font-bold tracking-tighter text-on-surface leading-none"
               >
-                Buzzza
+                buzZza
               </h1>
               <span
                 class="label-sm font-semibold tracking-[0.2em] text-secondary uppercase"
@@ -204,7 +214,7 @@
               class="hidden md:block relative w-[200px] rounded-[2rem] overflow-hidden shadow-[0_24px_80px_-12px_rgba(109,40,217,0.3)] border border-outline-variant/20 opacity-70 scale-90"
             >
               <img
-                alt="Buzzza app — home screen with quick actions"
+                alt="buzZza app — home screen with quick actions"
                 class="w-full h-auto"
                 src="/assets/screenshot-home.png"
               />
@@ -213,7 +223,7 @@
               class="relative w-[260px] md:w-[280px] rounded-[2.5rem] overflow-hidden shadow-[0_24px_80px_-12px_rgba(109,40,217,0.5)] border-2 border-outline-variant/30 z-10"
             >
               <img
-                alt="Buzzza app — inspection screen showing hive details, recorded actions, and media"
+                alt="buzZza app — inspection screen showing hive details, recorded actions, and media"
                 class="w-full h-auto"
                 src="/assets/screenshot-inspection.png"
               />
@@ -222,7 +232,7 @@
               class="hidden md:block relative w-[200px] rounded-[2rem] overflow-hidden shadow-[0_24px_80px_-12px_rgba(109,40,217,0.3)] border border-outline-variant/20 opacity-70 scale-90"
             >
               <img
-                alt="Buzzza app — dashboard with hive stats and colony health"
+                alt="buzZza app — dashboard with hive stats and colony health"
                 class="w-full h-auto"
                 src="/assets/screenshot-dashboard.png"
               />
@@ -386,14 +396,14 @@
                 class="w-full max-w-[200px] md:max-w-[220px] shrink-0 rounded-xl overflow-hidden border border-outline-variant/20 shadow-[0_12px_40px_-8px_rgba(109,40,217,0.25)]"
               >
                 <img
-                  alt="Buzzza app — bulk actions for selected hives: manage labels, move to yard, inspect"
+                  alt="buzZza app — bulk actions for selected hives: manage labels, move to yard, inspect"
                   class="w-full h-auto block"
                   src="/assets/screenshot-bulk.png"
                 />
               </div>
             </div>
           </div>
-          <!-- Queen Line Tracking -->
+          <!-- Queen Lineage -->
           <div
             class="group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
           >
@@ -406,11 +416,64 @@
                 >
               </div>
               <h3 class="text-xl font-headline font-semibold">
-                Queen Genetics
+                Queen Lineage
               </h3>
               <p class="text-on-surface-variant text-sm">
-                Trace genetic heritage across splits and re-queening events to
-                optimize your stock.
+                Mother-to-daughter relationships on every queen. Trace heritage
+                across splits, re-queening, and breeding events.
+              </p>
+            </div>
+          </div>
+          <!-- Queen Rearing Pipeline (Large Span) -->
+          <div
+            class="md:col-span-2 group relative p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden hover:bg-surface-container transition-colors"
+          >
+            <div
+              class="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity"
+            >
+              <span
+                class="material-symbols-outlined text-[120px]"
+                data-icon="workspaces"
+                >workspaces</span
+              >
+            </div>
+            <div class="relative z-10 space-y-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary"
+              >
+                <span class="material-symbols-outlined" data-icon="egg_alt"
+                  >egg_alt</span
+                >
+              </div>
+              <h3 class="text-2xl font-headline font-semibold">
+                Queen Rearing Pipeline
+              </h3>
+              <p class="text-on-surface-variant max-w-md">
+                Track rearing batches from graft to mated queen — grafted,
+                accepted, capped, placed, virgin, and mated counts with live
+                acceptance and capping rates. Spawn daughter queens at any
+                stage and assign them to hives in one step.
+              </p>
+            </div>
+          </div>
+          <!-- Queen Development Timeline -->
+          <div
+            class="group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
+          >
+            <div class="space-y-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined" data-icon="timeline"
+                  >timeline</span
+                >
+              </div>
+              <h3 class="text-xl font-headline font-semibold">
+                Development Timeline
+              </h3>
+              <p class="text-on-surface-variant text-sm">
+                Plan around each queen's lifecycle — graft, cap, emergence,
+                mating flights, and laying windows at a glance.
               </p>
             </div>
           </div>
@@ -435,7 +498,7 @@
             </h2>
             <p class="text-on-surface-variant text-lg md:text-xl">
               Coming soon to iOS and Android. Join the waitlist to be among the
-              first to experience Buzzza.
+              first to experience buzZza.
             </p>
             <div
               class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
@@ -487,7 +550,7 @@
         <div class="flex flex-col items-center md:items-start gap-4">
           <div class="flex items-center gap-2">
             <span class="text-lg font-bold text-zinc-100 font-headline"
-              >Buzzza</span
+              >buzZza</span
             >
             <span
               class="material-symbols-outlined text-tertiary text-lg"
@@ -504,6 +567,11 @@
         <div class="flex items-center gap-8">
           <a
             class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors"
+            href="/about"
+            >About</a
+          >
+          <a
+            class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors"
             href="/privacy"
             >Privacy Policy</a
           >
@@ -511,6 +579,11 @@
             class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors"
             href="/roadmap"
             >Roadmap</a
+          >
+          <a
+            class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors"
+            href="/support"
+            >Support</a
           >
         </div>
       </div>
