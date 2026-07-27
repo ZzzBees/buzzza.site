@@ -4,7 +4,7 @@
     "details": [
       {
         "appIDs": ["KN2YU3B469.com.buzzza.app"],
-        "components": [{ "/": "/tag/*" }, { "/": "/seed" }, { "/": "/seed/*" }]
+        "components": [{ "/": "/tag/*" }]
       }
     ]
   }
