@@ -1,592 +1,362 @@
 <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>buzZza, so you'll actually log it</title>
+  <meta name="description" content="buzZza makes logging an inspection take seconds, so you can keep track of every hive, queen, and follow-up. No signal required. Unlimited hives and yards for free. No sign-up required.">
+  <meta property="og:title" content="buzZza, so you'll actually log it">
+  <meta property="og:description" content="Keep track of every hive, queen, and follow-up without a clipboard or a dozen screens. Free, no sign-up, works with no signal.">
+  <meta property="og:image" content="https://buzzza.app/assets/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&display=swap">
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
 
-<html class="dark" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>buzZza — Beekeeping, simplified.</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "tertiary-container": "#d0a600",
-              "on-primary-fixed-variant": "#5b00c5",
-              "on-primary-fixed": "#250059",
-              background: "#131316",
-              surface: "#131316",
-              "on-surface-variant": "#ccc3d7",
-              "surface-container-high": "#2a2a2d",
-              "surface-container": "#1f1f22",
-              "surface-bright": "#39393c",
-              error: "#ffb4ab",
-              "primary-fixed": "#ebddff",
-              "on-primary-container": "#dac5ff",
-              "inverse-surface": "#e4e1e6",
-              "inverse-primary": "#7331df",
-              "error-container": "#93000a",
-              "on-primary": "#3f008d",
-              "on-tertiary-container": "#4f3d00",
-              "secondary-fixed-dim": "#4fdbc8",
-              "on-secondary-container": "#003f38",
-              "primary-fixed-dim": "#d3bbff",
-              "outline-variant": "#4a4455",
-              "secondary-fixed": "#71f8e4",
-              "on-surface": "#e4e1e6",
-              outline: "#958da1",
-              "surface-container-highest": "#353438",
-              primary: "#d3bbff",
-              "primary-container": "#6d28d9",
-              "secondary-container": "#04b4a2",
-              "on-secondary": "#003731",
-              "on-tertiary-fixed-variant": "#584400",
-              "surface-container-lowest": "#0e0e11",
-              "inverse-on-surface": "#303033",
-              secondary: "#4fdbc8",
-              "surface-tint": "#d3bbff",
-              "surface-dim": "#131316",
-              "tertiary-fixed-dim": "#f1c100",
-              "on-tertiary-fixed": "#241a00",
-              "surface-container-low": "#1b1b1e",
-              "on-tertiary": "#3d2f00",
-              "on-background": "#e4e1e6",
-              "on-secondary-fixed": "#00201c",
-              "on-error-container": "#ffdad6",
-              "on-secondary-fixed-variant": "#005048",
-              "on-error": "#690005",
-              "surface-variant": "#353438",
-              "tertiary-fixed": "#ffe08b",
-              tertiary: "#f1c100",
-            },
-            fontFamily: {
-              headline: ["Space Grotesk"],
-              body: ["Inter"],
-              label: ["Inter"],
-            },
-            borderRadius: {
-              DEFAULT: "0.125rem",
-              lg: "0.25rem",
-              xl: "0.5rem",
-              full: "0.75rem",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #131316;
-        color: #e4e1e6;
-      }
-      .font-headline {
-        font-family: "Space Grotesk", sans-serif;
-      }
-      .glass {
-        background: rgba(53, 52, 56, 0.8);
-        backdrop-filter: blur(20px);
-      }
-      .honeycomb-pattern {
-        background-image: radial-gradient(
-          circle at 2px 2px,
-          rgba(241, 193, 0, 0.03) 1px,
-          transparent 0
-        );
-        background-size: 24px 24px;
-      }
+    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; padding: 44px 0 56px; }
+    h1 { font-family: var(--display); font-weight: 850; font-size: clamp(38px, 6vw, 58px); line-height: 1.04; letter-spacing: -.015em; margin: 0 0 18px; text-wrap: balance; }
+    h1 em { font-style: italic; font-weight: 600; color: var(--violet); }
+    .lede { font-size: 19px; line-height: 1.55; color: var(--body-ink); max-width: 46ch; margin: 0 0 14px; }
+    .freeline { font-size: 15.5px; font-weight: 650; margin: 0 0 22px; }
+    .freeline .dot { color: var(--violet); }
+    .freeline .nb { white-space: nowrap; }
+    .badges { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .comingsoon { display: inline-flex; flex-direction: column; gap: 1px; background: var(--violet); color: var(--on-violet); border-radius: 10px; padding: 10px 20px; font-size: 15px; font-weight: 650; }
+    .comingsoon small { font-size: 10.5px; font-weight: 400; opacity: .85; letter-spacing: .04em; text-transform: uppercase; }
+    .storenote { font-size: 14px; color: var(--smoke); margin: 12px 0 0; }
+    .claimline { font-size: 15.5px; color: var(--body-ink); margin: 18px 0 0; }
+
+    .heroframe { justify-self: center; width: min(330px, 82vw); background: var(--gold-bg); border: 2px solid var(--gold-frame); border-radius: 28px; padding: 12px; box-shadow: 0 18px 50px -18px rgba(184,122,0,.4); position: relative; }
+    .heroframe::before { content: "✦ your first hive ✦"; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--field); color: var(--gold-ink); font-family: var(--display); font-style: italic; font-size: 14px; padding: 0 12px; white-space: nowrap; }
+    .heroframe img { border-radius: 18px; border: 1px solid var(--line); }
+    .heroframe figcaption { font-size: 12.5px; color: var(--smoke); text-align: center; padding: 10px 6px 2px; }
+
+    /* Platform toggle, in the nav so it is reachable while the screenshots
+       scroll past. Without JS the iPhone frames show and the control stays
+       hidden, so the page never depends on it. */
+    .navright { display: flex; align-items: center; gap: 12px; }
+    .platforms { display: none; gap: 0; width: max-content;
+      border: 1px solid var(--line); border-radius: 99px; padding: 2px; background: var(--surface); }
+    .js .platforms { display: flex; }
+    .platforms button { appearance: none; border: 0; background: transparent; cursor: pointer;
+      font: inherit; font-size: 13px; font-weight: 600; color: var(--body-ink);
+      padding: 6px 13px; border-radius: 99px; line-height: 1; transition: background .18s ease, color .18s ease; }
+    .platforms button:hover:not([aria-pressed="true"]) { background: var(--group); color: var(--wax); }
+    .platforms button[aria-pressed="true"] { background: var(--violet); color: var(--on-violet); }
+    .platforms button:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+
+    .legend { text-align: center; color: var(--wax); font-size: 15.5px; max-width: 64ch; margin: 0 auto; padding: 4px 0 10px; line-height: 1.9; }
+    .legend .tag { margin-right: 4px; }
+
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 60px 0; border-top: 1px solid var(--line); }
+    .feature.flip .media { order: -1; }
+    .feature h2 { font-family: var(--display); font-weight: 800; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.12; margin: 0 0 12px; text-wrap: balance; }
+    .feature h2 .tag { margin-left: 10px; }
+    .feature p { color: var(--body-ink); max-width: 46ch; margin: 0 0 12px; }
+    .feature p:last-child { margin-bottom: 0; }
+    .media { justify-self: center; }
+    .shot { width: min(250px, 72vw); }
+    .shot img { border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 14px 36px -16px rgba(28,25,23,.4); }
+    .shot-pair { display: flex; gap: 14px; }
+    .shot-pair .shot { width: min(210px, 40vw); }
+    .placeholder { width: min(250px, 72vw); aspect-ratio: 9/17; border: 1.5px dashed var(--line); border-radius: 22px; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--smoke); font-size: 13px; padding: 18px; overflow: hidden; }
+    .placeholder b { display: block; color: var(--wax); font-weight: 650; margin-bottom: 6px; }
+
+    .coming { margin-top: 18px; border-top: 1px dashed var(--line); padding-top: 14px; display: grid; gap: 10px; }
+    .coming .row { font-size: 15px; color: var(--body-ink); }
+    .coming .row b { font-weight: 650; color: var(--wax); }
+
+    .field { position: relative; border-radius: 24px; overflow: hidden; margin: 60px 0 8px; isolation: isolate; }
+    .field img { width: 100%; aspect-ratio: 21/9; max-height: 420px; object-fit: cover; object-position: center 62%; }
+    .field .said { position: absolute; inset: auto 0 0 0; padding: 28px 26px 24px; color: #FAFAF9;
+      background: linear-gradient(to top, rgba(12,10,9,.88) 0%, rgba(12,10,9,.72) 45%, rgba(12,10,9,0) 100%); }
+    .field h2 { font-family: var(--display); font-weight: 800; font-size: clamp(24px, 3.6vw, 34px); margin: 0 0 8px; color: #FAFAF9; text-wrap: balance; }
+    .field p { margin: 0; max-width: 48ch; color: #E7E5E4; font-size: 16.5px; }
+    .field figcaption { position: absolute; top: 14px; right: 16px; font-size: 12px; color: #FAFAF9;
+      background: rgba(12,10,9,.55); border-radius: 99px; padding: 4px 11px; backdrop-filter: blur(4px); }
+    @media (max-width: 560px) { .field img { aspect-ratio: 4/3; max-height: none; } .field .said { padding: 20px 18px 18px; } }
+
+    .planned, .own { border-top: 1px solid var(--line); padding: 60px 0; }
+    .planned h2, .own h2 { font-family: var(--display); font-weight: 800; font-size: clamp(24px, 3.4vw, 32px); margin: 0 0 18px; text-wrap: balance; }
+    .planned .grid, .own .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .planned .card, .own .card { border: 1px solid var(--line); background: var(--surface); border-radius: 16px; padding: 18px 20px; }
+    .planned .card h3, .own .card h3 { font-family: var(--display); font-size: 18.5px; margin: 8px 0 6px; }
+    .planned .card p, .own .card p { font-size: 14.5px; color: var(--body-ink); margin: 0; }
+    .own h2 { margin-bottom: 10px; }
+    .own .lede { max-width: 58ch; margin: 0 0 22px; color: var(--body-ink); }
+    .own .card .shot { width: min(220px, 70vw); margin: 18px auto 4px; }
+    @media (max-width: 760px) { .own .card { text-align: center; } .own .card .shot { margin-top: 14px; } }
+
+    .yours { text-align: center; padding: 68px 0; border-top: 1px solid var(--line); }
+    .yours h2 { font-family: var(--display); font-weight: 850; font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 0 0 18px; text-wrap: balance; }
+    .yours h2 em { color: var(--violet); font-style: italic; }
+    .yours p { max-width: 56ch; margin: 0 auto 10px; color: var(--body-ink); }
+
+    .sweep { border-top: 1px solid var(--line); padding: 52px 0 60px; }
+    .sweep h2 { font-family: var(--display); font-weight: 800; font-size: 24px; margin: 0 0 18px; text-align: center; }
+    .sweep ul { list-style: none; margin: 0 auto; padding: 0; max-width: 900px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px 22px; font-size: 14.5px; color: var(--body-ink); }
+    .sweep li::before { content: "◆ "; color: var(--violet); font-size: 10px; }
+
+    .why { display: grid; grid-template-columns: 88px 1fr; gap: 22px; align-items: start; background: var(--group); border: 1px solid var(--line); border-radius: 20px; padding: 30px 28px; margin: 8px 0 64px; }
+    .why .pic { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 6px 18px -8px rgba(28,25,23,.5); }
+    .why h2 { font-family: var(--display); font-size: 22px; margin: 0 0 8px; text-wrap: balance; }
+    .why p { margin: 0 0 8px; color: var(--body-ink); font-size: 15.5px; }
+    .why .sig { font-family: var(--display); font-style: italic; color: var(--smoke); }
+
+    .close { text-align: center; padding: 12px 0 80px; }
+    .close h2 { font-family: var(--display); font-weight: 850; font-size: clamp(28px, 4.6vw, 40px); margin: 0 auto 20px; max-width: 22ch; text-wrap: balance; }
+    .close .badges { justify-content: center; }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 24px 0 40px; text-align: center; }
+      .heroframe { width: min(270px, 76vw); }
+      .lede, .feature p { margin-left: auto; margin-right: auto; }
+      .badges { justify-content: center; }
+      .feature { grid-template-columns: 1fr; gap: 26px; padding: 42px 0; text-align: center; }
+      .feature.flip .media { order: 0; }
+      .coming { text-align: left; }
+      .why { grid-template-columns: 1fr; text-align: center; }
+      .why .pic { margin: 0 auto; }
+    }
     </style>
-  </head>
-  <body class="selection:bg-primary-container selection:text-white">
-    <!-- TopNavBar -->
-    <nav
-      class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl bg-gradient-to-b from-violet-500/10 to-transparent shadow-[0_8px_32px_0_rgba(109,40,217,0.08)]"
-    >
-      <div
-        class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20"
-      >
-        <div class="flex items-center gap-2">
-          <span
-            class="text-2xl font-bold tracking-tighter text-zinc-100 font-headline"
-            >buzZza</span
-          >
-          <div class="w-2 h-2 rounded-full bg-tertiary"></div>
-        </div>
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            class="font-['Space_Grotesk'] tracking-tight text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
-            href="/about"
-            >About</a
-          >
-          <a
-            class="font-['Space_Grotesk'] tracking-tight text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
-            href="#features"
-            >Features</a
-          >
-          <a
-            class="font-['Space_Grotesk'] tracking-tight text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
-            href="/roadmap"
-            >Roadmap</a
-          >
-          <a
-            class="font-['Space_Grotesk'] tracking-tight text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
-            href="/support"
-            >Support</a
-          >
-        </div>
-        <a
-          href="#download"
-          class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-medium text-sm hover:brightness-110 active:scale-95 transition-all no-underline"
-        >
-          Get Started
-        </a>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Primary">
+    <a class="wordmark" href="/">bu<span class="zz">zZz</span>a</a>
+    <div class="navright">
+      <div class="platforms" role="group" aria-label="Show screenshots from">
+        <button type="button" data-platform="ios" aria-pressed="true">iPhone</button>
+        <button type="button" data-platform="android" aria-pressed="false">Android</button>
       </div>
-    </nav>
-    <main class="pt-20">
-      <!-- Hero Section -->
-      <section
-        class="relative min-h-[870px] flex items-center justify-center overflow-hidden px-6 pt-16"
-      >
-        <div class="absolute inset-0 z-0">
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-[#6D28D9]/40 via-background to-background"
-          ></div>
-          <div
-            class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full"
-          ></div>
-          <div
-            class="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-secondary/10 blur-[100px] rounded-full"
-          ></div>
-        </div>
-        <div class="relative z-10 max-w-4xl w-full text-center space-y-8">
-          <div class="flex flex-col items-center gap-6">
-            <img
-              alt="buzZza Logo"
-              class="w-[90px] h-auto rounded-2xl shadow-[0_8px_32px_0_rgba(109,40,217,0.3)]"
-              src="/assets/app-icon.png"
-            />
-            <div class="space-y-2">
-              <h1
-                class="text-6xl md:text-8xl font-headline font-bold tracking-tighter text-on-surface leading-none"
-              >
-                buzZza
-              </h1>
-              <span
-                class="label-sm font-semibold tracking-[0.2em] text-secondary uppercase"
-                >Simple, Process-Driven Beekeeping</span
-              >
-            </div>
-          </div>
+      <a class="navcta" href="#get">Get the app</a>
+    </div>
+  </nav>
 
-          <div
-            class="flex flex-col md:flex-row items-center justify-center gap-4 pt-6"
-          >
-            <a
-              href="#download"
-              class="w-full md:w-auto px-8 py-4 bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition-all no-underline"
-            >
-              <span class="material-symbols-outlined" data-icon="download"
-                >download</span
-              >
-              Get the App
-            </a>
-            <!-- TODO: Add "Watch Demo" button here once a demo video is recorded -->
-          </div>
-          <!-- App Screenshots -->
-          <div class="pt-16 flex items-center justify-center gap-4 md:gap-6">
-            <div
-              class="hidden md:block relative w-[200px] rounded-[2rem] overflow-hidden shadow-[0_24px_80px_-12px_rgba(109,40,217,0.3)] border border-outline-variant/20 opacity-70 scale-90"
-            >
-              <img
-                alt="buzZza app — home screen with quick actions"
-                class="w-full h-auto"
-                src="/assets/screenshot-home.png"
-              />
-            </div>
-            <div
-              class="relative w-[260px] md:w-[280px] rounded-[2.5rem] overflow-hidden shadow-[0_24px_80px_-12px_rgba(109,40,217,0.5)] border-2 border-outline-variant/30 z-10"
-            >
-              <img
-                alt="buzZza app — inspection screen showing hive details, recorded actions, and media"
-                class="w-full h-auto"
-                src="/assets/screenshot-inspection.png"
-              />
-            </div>
-            <div
-              class="hidden md:block relative w-[200px] rounded-[2rem] overflow-hidden shadow-[0_24px_80px_-12px_rgba(109,40,217,0.3)] border border-outline-variant/20 opacity-70 scale-90"
-            >
-              <img
-                alt="buzZza app — dashboard with hive stats and colony health"
-                class="w-full h-auto"
-                src="/assets/screenshot-dashboard.png"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Features Bento Grid -->
-      <section
-        id="features"
-        class="max-w-7xl mx-auto px-6 py-32 space-y-16 honeycomb-pattern"
-      >
-        <div class="space-y-4">
-          <span
-            class="label-sm text-tertiary font-bold tracking-widest uppercase"
-            >Hive Intel</span
-          >
-          <h2 class="text-4xl md:text-5xl font-headline font-bold">
-            Managed for Precision.
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- QR Tagged (Large Span) -->
-          <div
-            class="md:col-span-2 group relative p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden hover:bg-surface-container transition-colors"
-          >
-            <div
-              class="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity"
-            >
-              <span
-                class="material-symbols-outlined text-[120px]"
-                data-icon="qr_code_2"
-                >qr_code_2</span
-              >
-            </div>
-            <div class="relative z-10 space-y-4">
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary"
-              >
-                <span
-                  class="material-symbols-outlined"
-                  data-icon="qr_code_scanner"
-                  >qr_code_scanner</span
-                >
-              </div>
-              <h3 class="text-2xl font-headline font-semibold">
-                QR-Tagged Hives
-              </h3>
-              <p class="text-on-surface-variant max-w-md">
-                Instantly retrieve full history and genetic data by
-                scanning weatherproof hive tags.
-              </p>
-            </div>
-          </div>
-          <!-- Smart Inspections -->
-          <div
-            class="group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary"
-              >
-                <span class="material-symbols-outlined" data-icon="fact_check"
-                  >fact_check</span
-                >
-              </div>
-              <h3 class="text-xl font-headline font-semibold">
-                Smart Inspections
-              </h3>
-              <p class="text-on-surface-variant text-sm">
-                Guided workflows for brood checks, nutrition, and parasite
-                treatments.
-              </p>
-            </div>
-          </div>
-          <!-- Yard Management -->
-          <div
-            class="group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary"
-              >
-                <span class="material-symbols-outlined" data-icon="map"
-                  >map</span
-                >
-              </div>
-              <h3 class="text-xl font-headline font-semibold">
-                Yard Management
-              </h3>
-              <p class="text-on-surface-variant text-sm">
-                Organize hives into yards, place them on GPS-accurate maps, and
-                use satellite imagery to see each yard in context.
-              </p>
-            </div>
-          </div>
-          <!-- Label & Categorize -->
-          <div
-            class="group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded-lg bg-on-surface-variant/10 flex items-center justify-center text-on-surface"
-              >
-                <span class="material-symbols-outlined" data-icon="label"
-                  >label</span
-                >
-              </div>
-              <h3 class="text-xl font-headline font-semibold">
-                Label &amp; Categorize
-              </h3>
-              <p class="text-on-surface-variant text-sm">
-                Labels and filters—by yard, queen line, or tags you define—so
-                the right hives surface when you need them.
-              </p>
-            </div>
-          </div>
-          <!-- Full History -->
-          <div
-            class="md:col-span-2 lg:col-span-1 group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary"
-              >
-                <span class="material-symbols-outlined" data-icon="history"
-                  >history</span
-                >
-              </div>
-              <h3 class="text-xl font-headline font-semibold">Full History</h3>
-              <p class="text-on-surface-variant text-sm">
-                Deep archive of every action taken. Search, filter, and export
-                for regulatory compliance.
-              </p>
-            </div>
-          </div>
-          <!-- Bulk Ops (Wide) -->
-          <div
-            class="md:col-span-2 group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
-          >
-            <div
-              class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
-            >
-              <div class="space-y-4">
-                <div
-                  class="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary"
-                >
-                  <span class="material-symbols-outlined" data-icon="layers"
-                    >layers</span
-                  >
-                </div>
-                <h3 class="text-2xl font-headline font-semibold">
-                  Bulk Operations
-                </h3>
-                <p class="text-on-surface-variant max-w-sm">
-                  Record yard-level treatments and feeding in one inspection
-                  instead of repeating entries for every hive.
-                </p>
-              </div>
-              <div
-                class="w-full max-w-[200px] md:max-w-[220px] shrink-0 rounded-xl overflow-hidden border border-outline-variant/20 shadow-[0_12px_40px_-8px_rgba(109,40,217,0.25)]"
-              >
-                <img
-                  alt="buzZza app — bulk actions for selected hives: manage labels, move to yard, inspect"
-                  class="w-full h-auto block"
-                  src="/assets/screenshot-bulk.png"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- Queen Lineage -->
-          <div
-            class="group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded-lg bg-error/20 flex items-center justify-center text-error"
-              >
-                <span class="material-symbols-outlined" data-icon="hub"
-                  >hub</span
-                >
-              </div>
-              <h3 class="text-xl font-headline font-semibold">
-                Queen Lineage
-              </h3>
-              <p class="text-on-surface-variant text-sm">
-                Mother-to-daughter relationships on every queen. Trace heritage
-                across splits, re-queening, and breeding events.
-              </p>
-            </div>
-          </div>
-          <!-- Queen Rearing Pipeline (Large Span) -->
-          <div
-            class="md:col-span-2 group relative p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden hover:bg-surface-container transition-colors"
-          >
-            <div
-              class="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity"
-            >
-              <span
-                class="material-symbols-outlined text-[120px]"
-                data-icon="workspaces"
-                >workspaces</span
-              >
-            </div>
-            <div class="relative z-10 space-y-4">
-              <div
-                class="w-12 h-12 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary"
-              >
-                <span class="material-symbols-outlined" data-icon="egg_alt"
-                  >egg_alt</span
-                >
-              </div>
-              <h3 class="text-2xl font-headline font-semibold">
-                Queen Rearing Pipeline
-              </h3>
-              <p class="text-on-surface-variant max-w-md">
-                Track rearing batches from graft to mated queen — grafted,
-                accepted, capped, placed, virgin, and mated counts with live
-                acceptance and capping rates. Spawn daughter queens at any
-                stage and assign them to hives in one step.
-              </p>
-            </div>
-          </div>
-          <!-- Queen Development Timeline -->
-          <div
-            class="group p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container transition-colors"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary"
-              >
-                <span class="material-symbols-outlined" data-icon="timeline"
-                  >timeline</span
-                >
-              </div>
-              <h3 class="text-xl font-headline font-semibold">
-                Development Timeline
-              </h3>
-              <p class="text-on-surface-variant text-sm">
-                Plan around each queen's lifecycle — graft, cap, emergence,
-                mating flights, and laying windows at a glance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Download Section -->
-      <section id="download" class="max-w-7xl mx-auto px-6 py-32">
-        <div
-          class="bg-primary-container/20 rounded-[2rem] p-12 md:p-24 relative overflow-hidden text-center border border-primary/20"
-        >
-          <div
-            class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 blur-[100px] rounded-full"
-          ></div>
-          <div
-            class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/10 blur-[100px] rounded-full"
-          ></div>
-          <div class="relative z-10 space-y-8 max-w-2xl mx-auto">
-            <h2
-              class="text-4xl md:text-6xl font-headline font-bold text-on-surface"
-            >
-              Ready to scale your apiary?
-            </h2>
-            <p class="text-on-surface-variant text-lg md:text-xl">
-              Coming soon to iOS and Android. Join the waitlist to be among the
-              first to experience buzZza.
-            </p>
-            <div
-              class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-            >
-              <div
-                class="w-48 h-14 bg-zinc-900 border border-zinc-700 rounded-xl flex items-center px-4 gap-3 cursor-not-allowed opacity-60"
-              >
-                <span
-                  class="material-symbols-outlined text-3xl"
-                  data-icon="apple"
-                  >ios</span
-                >
-                <div class="text-left">
-                  <div
-                    class="text-[10px] uppercase font-bold text-zinc-500 leading-none"
-                  >
-                    Coming to
-                  </div>
-                  <div class="text-sm font-bold text-zinc-100">App Store</div>
-                </div>
-              </div>
-              <div
-                class="w-48 h-14 bg-zinc-900 border border-zinc-700 rounded-xl flex items-center px-4 gap-3 cursor-not-allowed opacity-60"
-              >
-                <span
-                  class="material-symbols-outlined text-3xl"
-                  data-icon="play_arrow"
-                  >play_arrow</span
-                >
-                <div class="text-left">
-                  <div
-                    class="text-[10px] uppercase font-bold text-zinc-500 leading-none"
-                  >
-                    Coming to
-                  </div>
-                  <div class="text-sm font-bold text-zinc-100">Google Play</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- Footer -->
-    <footer class="bg-zinc-950 w-full border-t border-zinc-800/50 pt-12 pb-8">
-      <div
-        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"
-      >
-        <div class="flex flex-col items-center md:items-start gap-4">
-          <div class="flex items-center gap-2">
-            <span class="text-lg font-bold text-zinc-100 font-headline"
-              >buzZza</span
-            >
-            <span
-              class="material-symbols-outlined text-tertiary text-lg"
-              data-icon="flutter_dash"
-              >flutter_dash</span
-            >
-          </div>
-          <p
-            class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500"
-          >
-            © 2026 zZz Bees LLC. All rights reserved.
-          </p>
-        </div>
-        <div class="flex items-center gap-8">
-          <a
-            class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors"
-            href="/about"
-            >About</a
-          >
-          <a
-            class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors"
-            href="/privacy"
-            >Privacy Policy</a
-          >
-          <a
-            class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors"
-            href="/roadmap"
-            >Roadmap</a
-          >
-          <a
-            class="font-['Inter'] text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors"
-            href="/support"
-            >Support</a
-          >
-        </div>
+  <header class="hero">
+    <div>
+      <h1>buzZza, so you'll <em>actually</em> log it.</h1>
+      <p class="lede">Good beekeeping depends on good records. buzZza makes logging an inspection take seconds, so you can keep track of every hive, queen, and follow-up. No clipboard, no tapping through a dozen screens, no sweating through your logbook.</p>
+      <p class="freeline"><span class="nb">No signal required</span> <span class="dot">·</span> <span class="nb">Unlimited hives and yards for free</span> <span class="dot">·</span> <span class="nb">No sign-up required</span></p>
+      <div class="badges">
+        <span class="comingsoon">iPhone and Android<small>Coming to the App Store and Google Play</small></span>
       </div>
-    </footer>
-  </body>
+      <p class="storenote">Not listed yet. <a href="/roadmap/">See where it stands</a>.</p>
+    </div>
+    <figure class="heroframe">
+      <img src="assets/shots/ios/01-first-hive-receipt.jpg" fetchpriority="high" alt="buzZza's first-hive receipt: a Detailed Inspection scheduled for next week and the hive labeled by its source, moments after saving one hive." width="720" height="1565">
+      <figcaption>You saved one hive. This is what happened next.</figcaption>
+    </figure>
+  </header>
+
+  <main>
+  <p class="legend">This page is also the roadmap. <span class="tag today">TODAY</span> is in the app now. <span class="tag plan">PLANNED</span> is on the way, free. <span class="tag prem">PREMIUM</span> is on the way too, and is where we'll charge.</p>
+
+  <section class="feature" aria-labelledby="h-work">
+    <div>
+      <h2 id="h-work">The work sorts itself <span class="tag today">TODAY</span></h2>
+      <p>To&nbsp;Dos come from your schedule and close themselves when you record the work, never from a checkbox. Miss a week (it happens): overdue waits at the top, today stays today.</p>
+      <p>A To&nbsp;Do isn't a reminder. It opens the thing that finishes it: an inspection To&nbsp;Do opens the inspection, a requeen To&nbsp;Do opens the requeen. Schedule a mite count for a whole yard and work it hive by hive; stop halfway, and the To&nbsp;Do holds the hives you haven't reached for when you're back.</p>
+      <div class="coming">
+        <div class="row"><span class="tag plan">PLANNED</span> &nbsp;<b>Notifications.</b> Your phone taps you when scheduled work comes due.</div>
+      </div>
+    </div>
+    <div class="media shot-pair">
+      <figure class="shot"><img src="assets/shots/ios/02-home-days-work.jpg" data-ios="assets/shots/ios/02-home-days-work.jpg" data-android="assets/shots/android/02-home-days-work.jpg" alt="buzZza's Home on a real operation: four yards, twenty-nine hives, and today's work already sorted." width="720" height="1565" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/ios/06-inspection-saved.jpg" data-ios="assets/shots/ios/06-inspection-saved.jpg" data-android="assets/shots/android/06-inspection-saved.jpg" alt="The receipt after saving an inspection: the To Do is done and the next follow-up is scheduled." width="720" height="1565" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="feature flip" aria-labelledby="h-nuc">
+    <div>
+      <h2 id="h-nuc">Install the nuc. The follow-up is already scheduled. <span class="tag today">TODAY</span></h2>
+      <p>Set up the nuc you just bought and a detailed inspection lands on your list for a week out. You didn't create the hive and then create the inspection; one save did both.</p>
+      <p>That isn't the app deciding for you. It's an automation, one of a starter set you can add to, edit, or delete to match how you run your operation. Want hives labeled a certain way based on what you observe? An automation can do that too. Fewer taps between what you saw and what happens next.</p>
+    </div>
+    <div class="media shot-pair">
+      <figure class="shot"><img src="assets/shots/ios/07-add-hive-source.jpg" data-ios="assets/shots/ios/07-add-hive-source.jpg" data-android="assets/shots/android/07-add-hive-source.jpg" alt="Adding a hive in buzZza with the Source row set to Nuc." width="720" height="1565" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/ios/03-automation-rule.jpg" data-ios="assets/shots/ios/03-automation-rule.jpg" data-android="assets/shots/android/03-automation-rule.jpg" alt="The rule open for editing: when a hive is created from a nuc, schedule a detailed inspection a week later." width="720" height="1565" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="feature" aria-labelledby="h-queens">
+    <div>
+      <h2 id="h-queens">Queen rearing, so you can remember that time you got 100% take <span class="tag today">TODAY</span></h2>
+      <p>From the graft to the mating nuc to the hive she heads, and on to the day you sell her, buzZza tracks every queen. The calendar shows when a cell will hatch, when to cage her if you want the virgin, and once you place her, when to come back to check that she's laying a good pattern, and when to give up on her before the colony goes to laying workers.</p>
+      <p>Every batch keeps its graft count and its take. Split now, buy queens later, and place a whole batch into queenless nucs in one pass.</p>
+      <div class="coming">
+        <div class="row"><span class="tag plan">PLANNED</span> &nbsp;<b>Hygiene testing.</b> Pin-kill, FKB, UBeeO. The timed come-back schedules itself; the score computes itself.</div>
+        <div class="row"><span class="tag plan">PLANNED</span> &nbsp;<b>Compare on evidence.</b> Pick next year's breeders from records, not memory.</div>
+      </div>
+    </div>
+    <div class="media"><figure class="shot"><img src="assets/shots/ios/04-queen-calendar.jpg" data-ios="assets/shots/ios/04-queen-calendar.jpg" data-android="assets/shots/android/04-queen-calendar.jpg" alt="A virgin queen's calendar in buzZza, showing her milestones and when to check that she is laying." width="720" height="1565" loading="lazy"></figure></div>
+  </section>
+
+  <section class="feature flip" aria-labelledby="h-honey">
+    <div>
+      <h2 id="h-honey">Honey crop, from escapes to the bucket <span class="tag today">TODAY</span></h2>
+      <p>Move your supers through your process and keep the record: on escapes, drying, ready, into the extractor. Moisture readings along the way, real yields at the end. Come extraction day, you know what came from where.</p>
+      <div class="coming">
+        <div class="row"><span class="tag plan">PLANNED</span> &nbsp;<b>Packing.</b> From extraction lot to counted jars and containers.</div>
+      </div>
+    </div>
+    <div class="media"><figure class="shot"><img src="assets/shots/ios/05-honey-crop.jpg" data-ios="assets/shots/ios/05-honey-crop.jpg" data-android="assets/shots/android/05-honey-crop.jpg" alt="The honey crop in buzZza: a pull moving through its stages, drying, with its frame count." width="720" height="1565" loading="lazy"></figure></div>
+  </section>
+
+  <section class="own" aria-labelledby="h-own">
+    <h2 id="h-own">No two operations run the same way <span class="tag today">TODAY</span></h2>
+    <p class="lede">The list of things you can record is not fixed. Write your own, and the app treats it like one of ours: it lands on the hive, and a rule can follow it.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>The actions are yours to write</h3>
+        <p>Add the ones you run, edit the ones that ship, and delete the ones you will never touch. If it has a value, give it one: a count, a dose, a rating, a list to pick from.</p>
+        <figure class="shot"><img src="assets/shots/ios/09-write-your-own-action.jpg" data-ios="assets/shots/ios/09-write-your-own-action.jpg" data-android="assets/shots/android/09-write-your-own-action.jpg" alt="The New Action sheet in buzZza, defining an action called OA extended-release strips, typed as a treatment, with Number chosen as the value it records." width="720" height="1565" loading="lazy"></figure>
+      </div>
+      <div class="card">
+        <h3>Record it, and the hive remembers</h3>
+        <p>An action you wrote sits in the inspection beside the ones that ship, and its latest reading stays on the hive: four strips in, and when.</p>
+        <figure class="shot"><img src="assets/shots/ios/10-hive-remembers.jpg" data-ios="assets/shots/ios/10-hive-remembers.jpg" data-android="assets/shots/android/10-hive-remembers.jpg" alt="A hive's Latest Actions in buzZza, with the user-written OA extended-release strips action showing four strips and when they went in." width="720" height="1565" loading="lazy"></figure>
+      </div>
+      <div class="card">
+        <h3>And the rules follow them</h3>
+        <p>An action you added can set off a rule exactly like one of ours. Strips go in; six weeks later a To&nbsp;Do says pull them.</p>
+        <figure class="shot"><img src="assets/shots/ios/11-your-action-its-rule.jpg" data-ios="assets/shots/ios/11-your-action-its-rule.jpg" data-android="assets/shots/android/11-your-action-its-rule.jpg" alt="A rule in buzZza, built on a user-written action: when OA extended-release strips is recorded on a hive, schedule Remove OA strips in six weeks." width="720" height="1565" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <figure class="field rise">
+    <img src="assets/beeyard.jpg" alt="A working out-yard: white hive bodies standing in tall grass with a ridge line behind them, a pickup parked alongside, and one hive decorated with stickers." width="1450" height="1087" loading="lazy">
+    <figcaption>A real yard. Ours.</figcaption>
+    <div class="said">
+      <h2>It works out here</h2>
+      <p>Everything lives on your phone, so an out-yard with no bars is a normal day. Open the app, work the hives, drive home. Nothing to sync, nothing to time out, nothing to lose because the signal dropped.</p>
+    </div>
+  </figure>
+
+  <section class="planned" aria-labelledby="h-sky">
+    <h2 id="h-sky">What's blooming, what's coming</h2>
+    <div class="grid">
+      <div class="card"><span class="tag plan">PLANNED</span>
+        <h3>Weather at the yard</h3>
+        <p>Current conditions and a 16-day forecast on every yard screen, and records stamped with the weather they were made in.</p>
+      </div>
+      <div class="card"><span class="tag plan">PLANNED</span>
+        <h3>The bloom calendar</h3>
+        <p>Your yard's own forage calendar. Log "sourwood started early" in one tap, and when you pull, buzZza suggests what the honey likely is, for you to confirm.</p>
+      </div>
+      <div class="card"><span class="tag prem">PREMIUM</span>
+        <h3>An early heads-up on the flow</h3>
+        <p>The weather, your yard's bloom calendar, and your own past seasons, read together, so you hear the flow could start early while there's still time to get supers on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" aria-labelledby="h-assistant">
+    <div>
+      <h2 id="h-assistant">An assistant that has read your logbook <span class="tag prem">PREMIUM</span></h2>
+      <p>Ask for advice, talk through a plan, or log the day's work out loud, with an assistant that can read your records and act on them, with your approval before anything lands. "What's happening at the home yard?" "Which hives haven't had a mite count since July?"</p>
+      <p>Don't want to share your records with an AI? Then don't. It will never be required.</p>
+    </div>
+    <div class="media"><div class="placeholder"><b>No screenshot yet</b>this one is still being built, which is what the tag is for</div></div>
+  </section>
+
+  <section class="yours rise" aria-labelledby="h-free">
+    <h2 id="h-free">Unlimited hives.<br>Unlimited yards.<br>On your device, <em>free.</em></h2>
+    <p>Install it and run your operation. No sign-up, no account, and no bill for keeping your own logbook. Back it up to a real file whenever you like, and restore it whole; the records are yours to hold.</p>
+    <p>We do intend to make money, on the things that add value beyond a logbook: your records on every device at once, the early heads-up on the flow, the assistant. Those will be premium. The logbook is not one of them.</p>
+  </section>
+
+  <section class="sweep" aria-labelledby="h-more">
+    <h2 id="h-more">And the everyday</h2>
+    <ul>
+      <li>QR codes: scan one to open the hive, scan a handful to work on just those</li>
+      <li>Every queen on the books: year, mark, breed, and why she left</li>
+      <li>One-tap swarm reports: what left, what stayed, what you made of the cells</li>
+      <li>Deadout reports that keep the lesson: cause, equipment, on the record</li>
+      <li>Photos on everything; each hive wears its own</li>
+      <li>Pinnable notes, labels, and your own hive-naming scheme</li>
+      <li>Your buttons, in your order: hives, yards, and queens each carry an action set you arrange and trim</li>
+      <li>Separate books for your bees and the club's</li>
+      <li>English, Spanish, French · pounds or kilos · light or dark</li>
+      <li><span class="tag plan">PLANNED</span> The whole operation on one map</li>
+    </ul>
+  </section>
+
+  <section class="why rise" aria-labelledby="h-why">
+    <img class="pic" src="assets/founder.jpg" alt="David, in a bee veil, smiling, with the woods behind him." width="88" height="88" loading="lazy">
+    <div>
+      <h2 id="h-why">There are a lot of beekeeping apps. This one is mine.</h2>
+      <p>I'm building the app I want to run my own operation on: as few taps, screens, and transitions as possible between seeing something in the yard and having it logged, with the scheduling that falls out of what I saw handled for me.</p>
+      <p>I want to keep 300 hives and my day job. This is how I see that being possible.</p>
+      <p class="sig">-- David</p>
+    </div>
+  </section>
+
+  <section class="close rise" id="get" aria-labelledby="h-get">
+    <h2 id="h-get">Your bees are already keeping records.<br>Start reading them.</h2>
+    <div class="badges">
+      <span class="comingsoon">iPhone and Android<small>Coming to the App Store and Google Play</small></span>
+    </div>
+    <p class="claimline">No account. No signal. No subscription to keep your own records.</p>
+  </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 zZz Bees LLC</span>
+    <a href="/about/">About</a>
+    <a href="/roadmap/">Full roadmap</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/support/">Support</a>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    // Platform toggle. Show people the phone they are holding: an Android
+    // visitor should not have to be told these screenshots exist for them.
+    // A previous choice always wins over the guess, and a browser that blocks
+    // storage must not break the page.
+    const root = document.documentElement;
+
+    // Show people the phone they are holding. Everything that is not Android
+    // gets iPhone, including desktop: it is the larger store, and the toggle is
+    // right there in the nav.
+    const guessPlatform = () => {
+      const ua = navigator.userAgentData?.platform || navigator.userAgent || '';
+      return /android/i.test(ua) ? 'android' : 'ios';
+    };
+
+    let stored = null;
+    try { stored = localStorage.getItem('platform'); } catch (e) { /* private mode */ }
+
+    const setPlatform = (p, remember) => {
+      root.setAttribute('data-platform', p);
+      // Swap the source rather than hiding a second image element: a hidden
+      // image is still fetched, so shipping both sets charged every visitor for
+      // the platform they did not choose.
+      document.querySelectorAll('.shot img[data-ios]').forEach((img) => {
+        const next = p === 'android' ? img.dataset.android : img.dataset.ios;
+        if (next && img.getAttribute('src') !== next) img.setAttribute('src', next);
+      });
+      document.querySelectorAll('.platforms button').forEach((b) =>
+        b.setAttribute('aria-pressed', String(b.dataset.platform === p)));
+      if (remember) { try { localStorage.setItem('platform', p); } catch (e) { /* fine */ } }
+    };
+
+    setPlatform(stored === 'android' || stored === 'ios' ? stored : guessPlatform(), false);
+    document.querySelectorAll('.platforms button').forEach((b) =>
+      b.addEventListener('click', () => setPlatform(b.dataset.platform, true)));
+
+  })();
+</script>
+</body>
 </html>

@@ -1,219 +1,131 @@
-<!DOCTYPE html>
-<html class="dark" lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Roadmap — buzZza</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "background": "#131316",
-          "surface-container-low": "#1b1b1e",
-          "surface-container": "#1f1f22",
-          "on-surface": "#e4e1e6",
-          "on-surface-variant": "#ccc3d7",
-          "primary": "#d3bbff",
-          "primary-container": "#6d28d9",
-          "on-primary-container": "#dac5ff",
-          "secondary": "#4fdbc8",
-          "outline-variant": "#4a4455",
-          "tertiary": "#f1c100",
-        },
-        fontFamily: {
-          "headline": ["Space Grotesk"],
-          "body": ["Inter"],
-        },
-      },
-    },
-  }
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; background-color: #131316; color: #e4e1e6; }
-  .font-headline { font-family: 'Space Grotesk', sans-serif; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What buzZza does, and what's coming</title>
+  <meta name="description" content="The long version of buzZza's roadmap: what's in the app today, what's on the way free, and what will be premium.">
+  <meta property="og:title" content="What buzZza does, and what's coming">
+  <meta property="og:description" content="What's in the app today, what's on the way free, and what will be premium.">
+  <link rel="icon" href="../assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&display=swap">
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    .pagehead { padding: 34px 0 8px; max-width: 62ch; }
+    h1 { font-family: var(--display); font-weight: 850; font-size: clamp(30px, 5vw, 44px); line-height: 1.08; letter-spacing: -.015em; margin: 0 0 14px; text-wrap: balance; }
+    .pagehead p { font-size: 18px; color: var(--body-ink); margin: 0 0 8px; }
+    .key { display: flex; flex-wrap: wrap; gap: 10px 18px; padding: 14px 0 6px; font-size: 15px; color: var(--body-ink); }
+    .key span.item { display: inline-flex; align-items: baseline; gap: 7px; }
+
+    .band { border-top: 1px solid var(--line); padding: 40px 0 8px; }
+    .band > h2 { font-family: var(--display); font-weight: 800; font-size: clamp(23px, 3.4vw, 30px); margin: 0 0 6px; }
+    .band > p.bandnote { color: var(--body-ink); margin: 0 0 22px; max-width: 60ch; }
+
+    .items { display: grid; grid-template-columns: repeat(auto-fit, minmax(272px, 1fr)); gap: 2px 34px; }
+    .item-row { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .item-row h3 { font-family: var(--display); font-size: 18px; font-weight: 700; margin: 0 0 4px; }
+    .item-row p { font-size: 15px; color: var(--body-ink); margin: 0; }
+
+    .note { background: var(--group); border: 1px solid var(--line); border-radius: 16px; padding: 20px 24px; margin: 34px 0 12px; }
+    .note h2 { font-family: var(--display); font-size: 19px; margin: 0 0 8px; }
+    .note p { margin: 0 0 8px; color: var(--body-ink); font-size: 15.5px; }
+    .note p:last-child { margin-bottom: 0; }
+    .backlink { padding: 26px 0 40px; }
+  </style>
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
-<!-- Nav -->
-<nav class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(109,40,217,0.08)]">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
-<a href="/" class="flex items-center gap-2 no-underline">
-<span class="text-2xl font-bold tracking-tighter text-zinc-100 font-headline">buzZza</span>
-<div class="w-2 h-2 rounded-full bg-tertiary"></div>
-</a>
-<a href="/" class="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors no-underline">&larr; Back</a>
-</div>
-</nav>
+<div class="wrap">
+  <nav aria-label="Primary">
+    <a class="wordmark" href="../">bu<span class="zz">zZz</span>a</a>
+    <a class="navcta" href="../">Back to the app</a>
+  </nav>
 
-<main class="pt-32 pb-24 max-w-3xl mx-auto px-6">
-<div class="mb-12">
-<span class="text-xs font-bold tracking-widest uppercase text-tertiary">What's Next</span>
-<h1 class="text-4xl md:text-5xl font-headline font-bold mt-2 mb-4">Roadmap</h1>
-<p class="text-on-surface-variant text-lg">Where buzZza is headed. Features are listed roughly in priority order.</p>
-</div>
+  <main>
+    <header class="pagehead">
+      <h1>What buzZza does, and what's coming</h1>
+      <p>The long version. The front page tags each feature; this page lists all of them, including the small ones.</p>
+      <div class="key">
+        <span class="item"><span class="tag today">TODAY</span> in the app now</span>
+        <span class="item"><span class="tag plan">PLANNED</span> on the way, free</span>
+        <span class="item"><span class="tag prem">PREMIUM</span> on the way, and where we'll charge</span>
+      </div>
+    </header>
 
-<!-- Now Available -->
-<div class="mb-12">
-<div class="flex items-center gap-3 mb-6">
-<div class="w-3 h-3 rounded-full bg-secondary"></div>
-<h2 class="text-xl font-headline font-semibold">Available Now</h2>
-</div>
-<div class="space-y-4">
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5">qr_code_scanner</span>
-<div>
-<h3 class="font-semibold text-on-surface">QR-Tagged Hive Management</h3>
-<p class="text-on-surface-variant text-sm mt-1">Generate, print, and scan QR codes for instant hive identification.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5">fact_check</span>
-<div>
-<h3 class="font-semibold text-on-surface">Inspections & Workflows</h3>
-<p class="text-on-surface-variant text-sm mt-1">Customizable inspection workflows with actions, notes, and media capture.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5">map</span>
-<div>
-<h3 class="font-semibold text-on-surface">Yard Management & Maps</h3>
-<p class="text-on-surface-variant text-sm mt-1">Organize hives by yard with GPS coordinates and satellite map views.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5">layers</span>
-<div>
-<h3 class="font-semibold text-on-surface">Bulk Operations</h3>
-<p class="text-on-surface-variant text-sm mt-1">Select multiple hives and apply inspections, labels, moves, or deactivations in batch.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5">history</span>
-<div>
-<h3 class="font-semibold text-on-surface">Full Inspection History</h3>
-<p class="text-on-surface-variant text-sm mt-1">Complete audit trail of every action. Search, filter, and review.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5">hub</span>
-<div>
-<h3 class="font-semibold text-on-surface">Queen Tracking & Lineage</h3>
-<p class="text-on-surface-variant text-sm mt-1">Track individual queens with marking, source, development stage, and mother-to-daughter lineage linked to their hives.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5">egg_alt</span>
-<div>
-<h3 class="font-semibold text-on-surface">Queen Rearing & Batches</h3>
-<p class="text-on-surface-variant text-sm mt-1">Run rearing batches from graft to mated queen with staged milestones, acceptance and capping rates, and one-step daughter assignment.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <section class="band rise" aria-labelledby="b-today">
+      <h2 id="b-today">In the app today <span class="tag today">TODAY</span></h2>
+      <p class="bandnote">Everything here runs on your device, with no account and no signal.</p>
+      <div class="items">
+        <div class="item-row"><h3>The day's work</h3><p>To&nbsp;Dos that close themselves when you record the work, grouped overdue, today, and coming up. A To&nbsp;Do opens the thing that finishes it.</p></div>
+        <div class="item-row"><h3>Yard-wide jobs</h3><p>Schedule a mite count for a whole yard, work it hive by hive, and stop halfway; the To&nbsp;Do keeps the hives you haven't reached.</p></div>
+        <div class="item-row"><h3>Your own rules</h3><p>Come-backs and labels that fire from what you record. A starter set ships with the app; add, edit, or delete any of them.</p></div>
+        <div class="item-row"><h3>Actions you write yourself</h3><p>The list of things you can record is yours: add your own, edit the ones that ship, delete what you never run. Anything on the list can set off a rule.</p></div>
+        <div class="item-row"><h3>Screens you arrange</h3><p>Hives, yards, and queens each carry their own set of actions. Choose which ones appear and in what order; set it once and every hive follows.</p></div>
+        <div class="item-row"><h3>Colony sources</h3><p>Nuc, package, purchased colony, split, caught swarm, cutout. The source decides the first check and labels the hive.</p></div>
+        <div class="item-row"><h3>Walking a yard</h3><p>Arrange the walk order once; each hive's form carries the last hive's entries. Or write one blanket record across many hives.</p></div>
+        <div class="item-row"><h3>QR codes</h3><p>Scan one to open that hive, or scan a handful to run one action on exactly those.</p></div>
+        <div class="item-row"><h3>Queens on the books</h3><p>Year, mark, breed, supplier, and why she left. Lineage runs mother to daughter.</p></div>
+        <div class="item-row"><h3>Queen rearing</h3><p>Graft batches on the rearing calendar: capped, the days to stay out, ripe, emergence, mating, check for eggs, requeen if none.</p></div>
+        <div class="item-row"><h3>Mating nucs and banking</h3><p>Cycle a nuc through the season, pull mated queens, bank or cull them, and keep the success rate.</p></div>
+        <div class="item-row"><h3>Distribute a batch</h3><p>Place a whole batch of queens into queenless hives in one reviewed pass.</p></div>
+        <div class="item-row"><h3>Splits</h3><p>Walkaway, swarm cells, or honestly queenless, with every child hive reviewed before it's made.</p></div>
+        <div class="item-row"><h3>Swarm reports</h3><p>One tap: what left, whether you caught it, how the remnant re-heads, and how many nucs you made of the cells.</p></div>
+        <div class="item-row"><h3>Deadout reports</h3><p>Cause, sub-cause, and whether the equipment is reusable, kept on the hive's permanent record.</p></div>
+        <div class="item-row"><h3>The honey pull</h3><p>Supers through your stages, moisture readings, and extraction lots with real yields, by frame format.</p></div>
+        <div class="item-row"><h3>Photos and notes</h3><p>Photos on hives, queens, yards, batches, and inspections, each with a cover. Notes you can pin.</p></div>
+        <div class="item-row"><h3>Labels and naming</h3><p>Label anything, and name hives by your own scheme instead of ours.</p></div>
+        <div class="item-row"><h3>History</h3><p>Every recorded action, filterable by yard, hive, queen, or batch, as far back as you've kept bees in it.</p></div>
+        <div class="item-row"><h3>Backup and restore</h3><p>A real file you hold, restored whole. Nothing leaves your phone unless you send it somewhere.</p></div>
+        <div class="item-row"><h3>Separate books</h3><p>Your bees and the club's apiary kept apart, on one phone.</p></div>
+        <div class="item-row"><h3>Your units, your language</h3><p>English, Spanish, and French. Pounds or kilos. Light or dark.</p></div>
+      </div>
+    </section>
 
-<!-- Up Next -->
-<div class="mb-12">
-<div class="flex items-center gap-3 mb-6">
-<div class="w-3 h-3 rounded-full bg-primary"></div>
-<h2 class="text-xl font-headline font-semibold">Up Next</h2>
-</div>
-<div class="space-y-4">
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary mt-0.5">cloud_sync</span>
-<div>
-<h3 class="font-semibold text-on-surface">Cloud Sync & Multi-Device</h3>
-<p class="text-on-surface-variant text-sm mt-1">Sync your data across devices and back up to the cloud.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary mt-0.5">group</span>
-<div>
-<h3 class="font-semibold text-on-surface">Team Collaboration</h3>
-<p class="text-on-surface-variant text-sm mt-1">Share yards and hives with your team. Role-based permissions for owners, managers, and workers.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <section class="band rise" aria-labelledby="b-planned">
+      <h2 id="b-planned">On the way, free <span class="tag plan">PLANNED</span></h2>
+      <p class="bandnote">These run on your device too, which is why they'll be free when they land.</p>
+      <div class="items">
+        <div class="item-row"><h3>Weather at the yard</h3><p>Current conditions and a 16-day forecast on every yard screen, and records stamped with the weather they were made in.</p></div>
+        <div class="item-row"><h3>Notifications</h3><p>Your phone taps you when scheduled work comes due.</p></div>
+        <div class="item-row"><h3>The bloom calendar</h3><p>Your yard's own forage calendar, with one-tap bloom reports and a varietal suggestion when you pull.</p></div>
+        <div class="item-row"><h3>Hygiene testing</h3><p>Pin-kill, freeze-killed brood, UBeeO. The timed come-back schedules itself and the score computes itself.</p></div>
+        <div class="item-row"><h3>Breeding depth</h3><p>Lineage chains, daughters' records, and a compare mode for picking next year's breeders on evidence.</p></div>
+        <div class="item-row"><h3>Honey packing</h3><p>From extraction lot to counted jars and containers.</p></div>
+        <div class="item-row"><h3>The operation on a map</h3><p>A map-first view of every yard and hive.</p></div>
+        <div class="item-row"><h3>Queen naming schemes</h3><p>Name queens by your own convention, the way hives already work.</p></div>
+        <div class="item-row"><h3>Export</h3><p>Take your records out as a file anyone can read.</p></div>
+      </div>
+    </section>
 
-<!-- Future -->
-<div class="mb-12">
-<div class="flex items-center gap-3 mb-6">
-<div class="w-3 h-3 rounded-full bg-tertiary"></div>
-<h2 class="text-xl font-headline font-semibold">Exploring</h2>
-</div>
-<div class="space-y-4">
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-tertiary mt-0.5">bar_chart</span>
-<div>
-<h3 class="font-semibold text-on-surface">Analytics & Reports</h3>
-<p class="text-on-surface-variant text-sm mt-1">Hive health trends, production tracking, and exportable reports.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-tertiary mt-0.5">notifications</span>
-<div>
-<h3 class="font-semibold text-on-surface">Smart Reminders</h3>
-<p class="text-on-surface-variant text-sm mt-1">Automated reminders for treatment schedules, re-queening, and inspections due.</p>
-</div>
-</div>
-</div>
-<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/10">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-tertiary mt-0.5">download</span>
-<div>
-<h3 class="font-semibold text-on-surface">Data Export & Integrations</h3>
-<p class="text-on-surface-variant text-sm mt-1">Export to CSV/PDF, integrate with hive monitoring hardware and weather APIs.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
+    <section class="band rise" aria-labelledby="b-prem">
+      <h2 id="b-prem">On the way, and where we'll charge <span class="tag prem">PREMIUM</span></h2>
+      <p class="bandnote">These need a server doing work while you're not looking, which costs money to run. None of them is required to keep your records.</p>
+      <div class="items">
+        <div class="item-row"><h3>Sync and multi-device</h3><p>Your records on every device you use, with recovery from the server if a phone goes in the creek.</p></div>
+        <div class="item-row"><h3>An early heads-up on the flow</h3><p>The weather, your yard's bloom calendar, and your own past seasons read together, so you hear the flow could start early while there's still time to get supers on.</p></div>
+        <div class="item-row"><h3>An assistant that has read your logbook</h3><p>Ask for advice, talk through a plan, or log the day's work out loud, with your approval before anything lands.</p></div>
+      </div>
+    </section>
 
-<footer class="bg-zinc-950 w-full border-t border-zinc-800/50 pt-12 pb-8">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex flex-col items-center md:items-start gap-4">
-<a href="/" class="flex items-center gap-2 no-underline">
-<span class="text-lg font-bold text-zinc-100 font-headline">buzZza</span>
-</a>
-<p class="text-xs uppercase tracking-widest font-semibold text-zinc-500">
-&copy; 2026 zZz Bees LLC. All rights reserved.
-</p>
+    <div class="note rise">
+      <h2>How we decide what costs money</h2>
+      <p>If it runs on your phone, it's free: the hives, the queens, the To&nbsp;Dos, the pulls, the whole logbook, for as many hives and yards as you keep. That doesn't change.</p>
+      <p>If it needs a server running while you're not looking, it'll be premium, because that's the part with a bill attached. There's no price to quote yet, and nothing on this page is a promise about a date.</p>
+    </div>
+
+    <p class="backlink"><a href="../">Back to the front page</a></p>
+  </main>
+
+  <footer>
+    <span>© 2026 zZz Bees LLC</span>
+    <a href="../">Home</a>
+    <a href="../about/">About</a>
+    <a href="../privacy/">Privacy</a>
+    <a href="../support/">Support</a>
+  </footer>
 </div>
-<div class="flex items-center gap-8">
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/about">About</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/privacy">Privacy Policy</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/roadmap">Roadmap</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/support">Support</a>
-</div>
-</div>
-</footer>
 </body>
 </html>

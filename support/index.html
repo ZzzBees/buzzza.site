@@ -1,114 +1,78 @@
-<!DOCTYPE html>
-<html class="dark" lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Optional ways to support buzZza without unlocking app functionality." name="description"/>
-<title>Support buzZza</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "background": "#131316",
-          "surface-container-low": "#1b1b1e",
-          "surface-container": "#1f1f22",
-          "on-surface": "#e4e1e6",
-          "on-surface-variant": "#ccc3d7",
-          "primary": "#d3bbff",
-          "primary-container": "#6d28d9",
-          "on-primary-container": "#dac5ff",
-          "secondary": "#4fdbc8",
-          "outline-variant": "#4a4455",
-          "tertiary": "#f1c100"
-        },
-        fontFamily: {
-          "headline": ["Space Grotesk"],
-          "body": ["Inter"]
-        }
-      }
-    }
-  }
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; background-color: #131316; color: #e4e1e6; }
-  .font-headline { font-family: 'Space Grotesk', sans-serif; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support buzZza</title>
+  <meta name="description" content="A one-time way to chip in on buzZza. It unlocks nothing; the logbook stays free.">
+  <link rel="icon" href="../assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&display=swap">
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    main { max-width: 68ch; }
+    .pagehead { padding: 34px 0 6px; }
+    .eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--violet); margin: 0 0 8px; }
+    h1 { font-family: var(--display); font-weight: 850; font-size: clamp(30px, 5vw, 42px); line-height: 1.08; letter-spacing: -.015em; margin: 0 0 10px; text-wrap: balance; }
+    .lede { font-size: 18px; color: var(--body-ink); margin: 0 0 8px; }
+    h2 { font-family: var(--display); font-weight: 800; font-size: 22px; margin: 34px 0 10px; }
+    p { color: var(--body-ink); margin: 0 0 12px; }
+    .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 26px 0 8px; }
+    .tier { border: 1px solid var(--line); background: var(--surface); border-radius: 18px; padding: 22px 24px; display: flex; flex-direction: column; }
+    .tier h2 { font-size: 19px; margin: 0 0 8px; }
+    .tier p { font-size: 15px; margin: 0 0 18px; }
+    .tier a { margin-top: auto; display: inline-block; text-align: center; font-size: 15px; font-weight: 650; color: var(--on-violet); background: var(--violet); border-radius: 10px; padding: 10px 18px; text-decoration: none; }
+    .tier a:hover { filter: brightness(1.08); }
+    .box { border: 1px solid var(--line); background: var(--group); border-radius: 18px; padding: 24px 26px; margin: 34px 0 8px; }
+    .box h2 { margin-top: 0; }
+    .box p:last-child { margin-bottom: 0; }
+    .backlink { padding: 30px 0 40px; }
+  </style>
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
-<nav class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(109,40,217,0.08)]">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
-<a href="/" class="flex items-center gap-2 no-underline">
-<span class="text-2xl font-bold tracking-tighter text-zinc-100 font-headline">buzZza</span>
-<div class="w-2 h-2 rounded-full bg-tertiary"></div>
-</a>
-<a href="/about" class="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors no-underline">&larr; About</a>
-</div>
-</nav>
+<div class="wrap">
+  <nav aria-label="Primary">
+    <a class="wordmark" href="../">bu<span class="zz">zZz</span>a</a>
+    <a class="navcta" href="../">Back to the app</a>
+  </nav>
 
-<main class="pt-32 pb-24 max-w-3xl mx-auto px-6">
-<div class="mb-12">
-<span class="text-xs font-bold tracking-widest uppercase text-tertiary">Support</span>
-<h1 class="text-4xl md:text-5xl font-headline font-bold mt-2 mb-4">Support buzZza</h1>
-<p class="text-on-surface-variant text-lg">A quiet way to help fund maintenance and future work, without turning the app into a subscription gate.</p>
-</div>
+  <main>
+    <header class="pagehead">
+      <p class="eyebrow">Support</p>
+      <h1>Help me buy more bees</h1>
+      <p class="lede">buzZza is free, and the logbook stays free. If it has earned you a few minutes back in the yard and you feel like chipping in, this is the jar.</p>
+    </header>
 
-<div class="space-y-8 text-on-surface-variant leading-relaxed">
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">What support means here</h2>
-<p>Support is optional. It does not unlock features, remove limits, or change what the core app can do. The point is simply to help fund ongoing maintenance for something I want to keep useful over the long term.</p>
-</section>
+    <p>One payment, whatever amount you like, through Stripe. It unlocks nothing in the app, now or later. It goes toward the hours, the developer accounts, and, honestly, more bees.</p>
 
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Why there are two options</h2>
-<p>One-time support is for people who just want to chip in once. Recurring support is for people who want to help cover the ongoing work of maintaining and improving the app over time.</p>
-</section>
+    <div class="tiers">
+      <div class="tier">
+        <h2>Chip in once</h2>
+        <p>No account with us, nothing recurring, nothing to cancel.</p>
+        <!-- #267: this must be a LIVE payment link before publish. The publish
+             step refuses a test-mode Stripe URL (the "test_" prefix) on purpose. -->
+        <a href="https://buy.stripe.com/9B6bJ2fCM9Oy8TO4nRdIA01" rel="noopener noreferrer" target="_blank">Open the jar</a>
+      </div>
+    </div>
 
-<section class="grid gap-4 md:grid-cols-2">
-<div class="rounded-2xl bg-surface-container-low border border-outline-variant/20 p-6">
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-2">One-time support</h2>
-<p class="mb-4">A simple way to contribute once if buzZza has been useful to you.</p>
-<a class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-primary-container text-on-primary-container font-medium hover:brightness-110 transition-all no-underline" href="https://buy.stripe.com/test_cNibJ2epk30a3xBe3j0x200" rel="noopener noreferrer" target="_blank">
-Open one-time support
-</a>
-</div>
-<div class="rounded-2xl bg-surface-container-low border border-outline-variant/20 p-6">
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-2">Recurring support</h2>
-<p class="mb-4">A monthly option for people who want to help keep development moving.</p>
-<a class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-primary-container text-on-primary-container font-medium hover:brightness-110 transition-all no-underline" href="https://buy.stripe.com/test_5kQbJ26WSfMW8RVgbr0x201" rel="noopener noreferrer" target="_blank">
-Open recurring support
-</a>
-</div>
-</section>
+    <div class="box">
+      <h2>What will not change</h2>
+      <p>The logbook stays free: unlimited hives, unlimited yards, on your device, with no account. The parts that need a server, your records on every device, the early heads-up on the flow, the assistant, will be premium when they arrive, and that is how the app will pay for itself. This page is just a thank-you. The <a href="../roadmap/">roadmap</a> says which is which.</p>
+    </div>
 
-<section class="rounded-2xl bg-surface-container-low border border-outline-variant/20 p-6 md:p-8">
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">What will not change</h2>
-<p>The main buzZza experience is meant to stay available without monthly payments. If paid add-ons exist later, they should be optional extras like deeper insights, not a way of holding your basic records hostage.</p>
-</section>
-</div>
-</main>
+    <p class="backlink"><a href="../">Back to the front page</a></p>
+  </main>
 
-<footer class="bg-zinc-950 w-full border-t border-zinc-800/50 pt-12 pb-8">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex flex-col items-center md:items-start gap-4">
-<a href="/" class="flex items-center gap-2 no-underline">
-<span class="text-lg font-bold text-zinc-100 font-headline">buzZza</span>
-</a>
-<p class="text-xs uppercase tracking-widest font-semibold text-zinc-500">
-&copy; 2026 zZz Bees LLC. All rights reserved.
-</p>
+  <footer>
+    <span>© 2026 zZz Bees LLC</span>
+    <a href="../">Home</a>
+    <a href="../about/">About</a>
+    <a href="../roadmap/">Roadmap</a>
+    <a href="../privacy/">Privacy</a>
+  </footer>
 </div>
-<div class="flex items-center gap-8">
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/about">About</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/privacy">Privacy Policy</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/roadmap">Roadmap</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/support">Support</a>
-</div>
-</div>
-</footer>
 </body>
 </html>

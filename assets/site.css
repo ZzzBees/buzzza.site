@@ -1,0 +1,85 @@
+/* buzzza.app shared styles. Tokens mirror the app (src/theme/colors.ts). */
+/* The app's own palette (src/theme/colors.ts): violet primary, warm neutrals,
+   and the first-hive gold. Light is the default; dark follows the system. */
+:root {
+  --field: #FAFAF9;          /* neutral.50  - app light background */
+  --surface: #FFFFFF;        /* neutral.0   - app light surface */
+  --group: #F4F1FC;          /* surfaceGroup - the app's faint violet row fill */
+  --line: #E7E5E4;           /* neutral.200 - app border */
+  --wax: #1C1917;            /* neutral.900 - app text */
+  --body-ink: #44403C;       /* neutral.700 - app textSecondary */
+  --smoke: #57534E;          /* neutral.600 - app textMuted */
+  --violet: #6D28D9;         /* primary.700 - app light primary */
+  --violet-soft: #EDE9FE;    /* primary.100 - app primaryContainer */
+  --violet-ink: #4C1D95;     /* primary.900 - onPrimaryContainer */
+  --gold-frame: #E8B84B;     /* the first-hive gold, a product fact */
+  --gold-bg: #FBF4E1;        /* the receipt's warmed surface */
+  --gold-ink: #7A5A00;       /* text-safe gold for light backgrounds */
+  --on-violet: #FFFFFF;      /* app onPrimary (light) */
+  --display: "Fraunces", Georgia, serif;
+  --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --field: #0C0A09;        /* neutral.950 - app dark background */
+    --surface: #1C1917;      /* neutral.900 - app dark surface */
+    --group: #191426;        /* surfaceGroup dark - faint violet on dark */
+    --line: #44403C;         /* neutral.700 */
+    --wax: #FAFAF9;          /* neutral.50 */
+    --body-ink: #D6D3D1;     /* neutral.300 */
+    --smoke: #A8A29E;        /* neutral.400 */
+    --violet: #A78BFA;       /* primary.400 - app dark primary */
+    --violet-soft: #241a3d;
+    --violet-ink: #DDD6FE;   /* primary.200 */
+    --gold-bg: #26221A;      /* the receipt's dark warmed surface, from the app */
+    --gold-ink: #E8B84B;
+    --on-violet: #0C0A09;    /* app onPrimary (dark): ink on the light violet */
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--field); color: var(--wax); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--violet-soft); color: var(--violet-ink); }
+/* Surfaces the browser owns but the page still wears. */
+html { scrollbar-color: var(--line) transparent; }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; border: 3px solid var(--field); }
+::-webkit-scrollbar-thumb:hover { background: var(--smoke); }
+a { color: var(--violet); text-underline-offset: 3px; }
+img { max-width: 100%; display: block; height: auto; }
+figure { margin: 0; }
+/* The gutter scales with the viewport. A fixed 22px is fine on a phone but
+   leaves full-width blocks (the sweep grid, the footer, the planned cards)
+   running to the window edge at around 1000px, where the column fills nearly
+   the whole window and prose is inset by its own measure but nothing else is. */
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 clamp(22px, 5vw, 44px); }
+
+/* Sticky so the platform toggle stays reachable while the screenshots scroll
+   past. Solid ground, not glass: the page sits on one material. */
+nav { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 0; position: sticky; top: 0; z-index: 20; background: var(--field);
+  border-bottom: 1px solid transparent; transition: border-color .2s ease; }
+nav.scrolled { border-bottom-color: var(--line); }
+@media (max-width: 460px) { .navcta { display: none; } }
+.wordmark { font-family: var(--display); font-weight: 800; font-size: 24px; color: var(--wax); text-decoration: none; }
+.wordmark .zz { color: var(--violet); }
+.navcta { font-size: 14px; font-weight: 600; color: var(--wax); text-decoration: none;
+  border: 1.5px solid var(--line); border-radius: 99px; padding: 8px 16px;
+  transition: border-color .18s ease, color .18s ease; }
+.navcta:hover { border-color: var(--violet); color: var(--violet); }
+.navcta:active { transform: translateY(1px); }
+a:focus-visible, .badge:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+
+.tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: .11em; border-radius: 99px; padding: 3px 10px; vertical-align: 2px; white-space: nowrap; }
+.tag.today { color: var(--violet-ink); background: var(--violet-soft); border: 1px solid var(--violet-soft); }
+.tag.plan { color: var(--body-ink); background: transparent; border: 1px solid var(--line); }
+.tag.prem { color: var(--gold-ink); background: var(--gold-bg); border: 1px solid var(--gold-frame); }
+footer { border-top: 1px solid var(--line); padding: 26px 0 40px; font-size: 13.5px; color: var(--smoke); display: flex; gap: 8px 18px; flex-wrap: wrap; justify-content: center; text-align: center; }
+footer a { color: var(--smoke); transition: color .18s ease; }
+footer a:hover { color: var(--violet); }
+.js .rise { opacity: 0; transform: translateY(18px);
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.js .rise.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .rise { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+@media print { .js .rise { opacity: 1; transform: none; } }

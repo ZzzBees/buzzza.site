@@ -1,169 +1,91 @@
-<!DOCTYPE html>
-<html class="dark" lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Privacy Policy — buzZza</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "background": "#131316",
-          "surface-container-low": "#1b1b1e",
-          "on-surface": "#e4e1e6",
-          "on-surface-variant": "#ccc3d7",
-          "primary-container": "#6d28d9",
-          "on-primary-container": "#dac5ff",
-          "outline-variant": "#4a4455",
-          "tertiary": "#f1c100",
-        },
-        fontFamily: {
-          "headline": ["Space Grotesk"],
-          "body": ["Inter"],
-        },
-      },
-    },
-  }
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; background-color: #131316; color: #e4e1e6; }
-  .font-headline { font-family: 'Space Grotesk', sans-serif; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>buzZza Privacy Policy</title>
+  <meta name="description" content="buzZza stores your beekeeping data on your device. This policy explains what is collected, how it is used, and your rights.">
+  <link rel="icon" href="../assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&display=swap">
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    main { max-width: 68ch; }
+    .pagehead { padding: 34px 0 6px; }
+    h1 { font-family: var(--display); font-weight: 850; font-size: clamp(30px, 5vw, 42px); line-height: 1.08; letter-spacing: -.015em; margin: 0 0 8px; text-wrap: balance; }
+    .updated { color: var(--smoke); font-size: 15px; margin: 0 0 8px; }
+    .lede { font-size: 18px; color: var(--body-ink); }
+    h2 { font-family: var(--display); font-weight: 800; font-size: 22px; margin: 36px 0 10px; }
+    p { color: var(--body-ink); margin: 0 0 12px; }
+    dl { margin: 0 0 12px; }
+    dt { font-weight: 650; color: var(--wax); margin-top: 14px; }
+    dd { margin: 4px 0 0; color: var(--body-ink); }
+    .backlink { padding: 30px 0 40px; }
+  </style>
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
-<!-- Nav -->
-<nav class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(109,40,217,0.08)]">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
-<a href="/" class="flex items-center gap-2 no-underline">
-<span class="text-2xl font-bold tracking-tighter text-zinc-100 font-headline">buzZza</span>
-<div class="w-2 h-2 rounded-full bg-tertiary"></div>
-</a>
-<a href="/" class="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors no-underline">&larr; Back</a>
+<div class="wrap">
+  <nav aria-label="Primary">
+    <a class="wordmark" href="../">bu<span class="zz">zZz</span>a</a>
+    <a class="navcta" href="../">Back to the app</a>
+  </nav>
+
+  <main>
+    <header class="pagehead">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: August 27, 2026</p>
+    </header>
+
+    <h2>Overview</h2>
+    <p class="lede">Buzzza ("we", "our", "us") is a beekeeping management app developed by zZz Bees LLC. We take your privacy seriously. This policy explains what data we collect, how we use it, and your rights.</p>
+
+    <h2>Data We Collect</h2>
+    <dl>
+      <dt>Hive &amp; Inspection Data</dt>
+      <dd>Information you enter about your hives, yards, inspections, and actions. This data is stored locally on your device.</dd>
+      <dt>Location Data</dt>
+      <dd>GPS coordinates for yard waypoints when you grant permission, and optional use of your current position on the device to filter hive lists to nearby yards (for example in the hive picker). Location is not used in the background for tracking.</dd>
+      <dt>Camera Access</dt>
+      <dd>Used solely for QR code scanning and capturing inspection media. We do not access your camera in the background.</dd>
+      <dt>Photos &amp; Media</dt>
+      <dd>Inspection photos and videos you choose to attach. These are stored locally on your device.</dd>
+    </dl>
+
+    <h2>Data Storage</h2>
+    <p>All your beekeeping data is stored locally on your device. We do not operate cloud servers that store your personal data. Your hive records, inspection history, and media remain on your device unless you explicitly choose to export or share them.</p>
+
+    <h2>Third-Party Services</h2>
+    <dl>
+      <dt>Mapbox</dt>
+      <dd>Used for map views in yard management. Mapbox may collect anonymized usage data per their own privacy policy.</dd>
+      <dt>Expo/EAS</dt>
+      <dd>Used for app updates and build distribution. Expo may collect basic device and crash analytics.</dd>
+      <dt>Sentry</dt>
+      <dd>Used for crash and error reporting so we can find and fix problems. Reports contain diagnostic information about the failure and your device. They do not contain your beekeeping records, photos, or location.</dd>
+    </dl>
+
+    <h2>Your Rights</h2>
+    <p>Since your data is stored locally, you have full control over it at all times. You can delete all app data by clearing the app's storage or uninstalling the app. You can back up your data at any time using the app's built-in backup, which produces a file you keep and can restore from.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy as the app evolves. Significant changes will be communicated through the app or on this page.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy? Reach us at <a href="mailto:privacy@buzzza.app">privacy@buzzza.app</a>.</p>
+
+    <p class="backlink"><a href="../">Back to the front page</a></p>
+  </main>
+
+  <footer>
+    <span>© 2026 zZz Bees LLC</span>
+    <a href="../">Home</a>
+    <a href="../about/">About</a>
+    <a href="../roadmap/">Roadmap</a>
+    <a href="../support/">Support</a>
+  </footer>
 </div>
-</nav>
-
-<main class="pt-32 pb-24 max-w-3xl mx-auto px-6">
-<h1 class="text-4xl md:text-5xl font-headline font-bold mb-4">Privacy Policy</h1>
-<p class="text-on-surface-variant text-sm mb-12">Last updated: April 18, 2026</p>
-
-<div class="space-y-8 text-on-surface-variant leading-relaxed">
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Overview</h2>
-<p>buzZza (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is a beekeeping management mobile application developed by <strong class="text-on-surface">zZz Bees LLC</strong> (&ldquo;zZz Bees&rdquo;), which acts as the data controller for any personal information processed in connection with this policy. We take your privacy seriously. This Privacy Policy explains what information the app accesses, what stays on your device, what may be sent to third-party services, how we protect it, and how you can exercise your choices.</p>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Scope</h2>
-<p>This policy applies to the buzZza mobile app for <strong class="text-on-surface">iOS</strong> and <strong class="text-on-surface">Android</strong> (the &ldquo;App&rdquo;). It also applies to this website when you read this policy. It does not govern third-party websites or services that we link to; those services have their own policies.</p>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Data stored on your device</h2>
-<p>The core of buzZza is <strong class="text-on-surface">local-first</strong>: your beekeeping records stay on your device unless you explicitly export or share them.</p>
-<ul class="list-disc list-inside space-y-2 mt-3">
-<li><strong class="text-on-surface">Hive, yard, and inspection data:</strong> Information you enter about hives, yards, inspections, and actions.</li>
-<li><strong class="text-on-surface">Location for waypoints:</strong> GPS coordinates you associate with yards, only when you grant location access and use location features.</li>
-<li><strong class="text-on-surface">Photos and videos:</strong> Media you capture or attach to inspections, stored as part of your local app data.</li>
-</ul>
-<p class="mt-3">We do <strong class="text-on-surface">not</strong> operate our own cloud backend that syncs or stores your hive database, inspection history, or attached media. That content remains under your control on the device until you delete it, clear app storage, uninstall the App, or use export/share features you initiate.</p>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Permissions we request</h2>
-<p>The App may request the following permissions. Each is used only for the stated purpose and only when needed for that feature.</p>
-<ul class="list-disc list-inside space-y-3 mt-3">
-<li><strong class="text-on-surface">Camera (<code class="text-sm bg-zinc-800/80 px-1.5 py-0.5 rounded text-on-surface-variant">android.permission.CAMERA</code> / iOS camera):</strong> Scanning QR codes on hive tags and capturing photos or videos for inspections. We do not access the camera in the background.</li>
-<li><strong class="text-on-surface">Photos / media library:</strong> Choosing existing photos or videos to attach to inspections (on Android, the system may use permissions such as <code class="text-sm bg-zinc-800/80 px-1.5 py-0.5 rounded text-on-surface-variant">READ_MEDIA_IMAGES</code> and <code class="text-sm bg-zinc-800/80 px-1.5 py-0.5 rounded text-on-surface-variant">READ_MEDIA_VIDEO</code> depending on OS version). We only access items you select.</li>
-<li><strong class="text-on-surface">Location (<code class="text-sm bg-zinc-800/80 px-1.5 py-0.5 rounded text-on-surface-variant">ACCESS_FINE_LOCATION</code> / <code class="text-sm bg-zinc-800/80 px-1.5 py-0.5 rounded text-on-surface-variant">ACCESS_COARSE_LOCATION</code> when applicable, and iOS location when in use):</strong> Setting yard waypoint coordinates when you use map or location features. We do not use background location.</li>
-</ul>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Data sent off your device</h2>
-<p>Some limited technical data is transmitted over the internet so the App can function securely and reliably. <strong class="text-on-surface">We do not sell your personal information.</strong> The following describes what may leave your device:</p>
-<ul class="list-disc list-inside space-y-3 mt-3">
-<li><strong class="text-on-surface">Sentry (Functional Software, Inc.):</strong> We use <a class="text-primary-container hover:text-on-primary-container underline underline-offset-2" href="https://sentry.io/" rel="noopener noreferrer" target="_blank">Sentry</a> for crash reporting and error diagnostics. When a crash or certain errors occur, the App may send technical information such as stack traces, device model, operating system version, app version, and related diagnostic context to Sentry&rsquo;s servers. This is <strong class="text-on-surface">not</strong> used to upload your hive database, inspection content, or media files as product features; it is for reliability and engineering. Processing is subject to Sentry&rsquo;s privacy policy: <a class="text-primary-container hover:text-on-primary-container underline underline-offset-2" href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">sentry.io/privacy</a>.</li>
-<li><strong class="text-on-surface">Expo Updates / EAS (Expo):</strong> The App may check for over-the-air updates. That can involve sending basic technical metadata (for example platform, runtime or app version, and update channel) to Expo&rsquo;s infrastructure. See <a class="text-primary-container hover:text-on-primary-container underline underline-offset-2" href="https://expo.dev/privacy" rel="noopener noreferrer" target="_blank">expo.dev/privacy</a>.</li>
-<li><strong class="text-on-surface">Mapbox (Mapbox, Inc.):</strong> Map views load map tiles and related resources from Mapbox. Requests may include your IP address, approximate location derived by Mapbox from network information, and standard HTTP metadata as described in Mapbox&rsquo;s privacy policy: <a class="text-primary-container hover:text-on-primary-container underline underline-offset-2" href="https://www.mapbox.com/legal/privacy" rel="noopener noreferrer" target="_blank">mapbox.com/legal/privacy</a>.</li>
-</ul>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">What we do not do</h2>
-<ul class="list-disc list-inside space-y-2">
-<li>We do not sell your personal information.</li>
-<li>We do not use your data for third-party advertising or cross-app behavioral advertising.</li>
-<li>We do not run the camera or location in the background for tracking.</li>
-</ul>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Security</h2>
-<p>Network requests from the App to third-party services (Sentry, Expo, Mapbox) use industry-standard transport encryption (HTTPS/TLS) where applicable. Your beekeeping data at rest remains in the App&rsquo;s sandbox on your device, subject to your device&rsquo;s operating system protections. No security practice is perfect; use a device passcode and keep the App updated to reduce risk.</p>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Data retention and deletion</h2>
-<ul class="list-disc list-inside space-y-2">
-<li><strong class="text-on-surface">Local beekeeping data:</strong> Retained on your device until you delete records inside the App, clear the App&rsquo;s storage, or uninstall the App. You may also export data using features we provide, then delete local copies as you choose.</li>
-<li><strong class="text-on-surface">Crash and diagnostic data (Sentry):</strong> Retained according to Sentry&rsquo;s settings and policies (commonly on the order of <strong class="text-on-surface">up to 90 days</strong> for error events unless we configure a different retention period).</li>
-<li><strong class="text-on-surface">Map and update providers:</strong> Retention of server logs and telemetry is governed by each provider&rsquo;s policy (Mapbox, Expo).</li>
-</ul>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Children&rsquo;s privacy</h2>
-<p>buzZza is not directed at children under 13 (or the minimum age required in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided us personal information, contact us at the address below and we will take appropriate steps.</p>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Third-party privacy policies</h2>
-<ul class="list-disc list-inside space-y-2">
-<li><a class="text-primary-container hover:text-on-primary-container underline underline-offset-2" href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">Sentry &mdash; Privacy Policy</a></li>
-<li><a class="text-primary-container hover:text-on-primary-container underline underline-offset-2" href="https://expo.dev/privacy" rel="noopener noreferrer" target="_blank">Expo &mdash; Privacy Policy</a></li>
-<li><a class="text-primary-container hover:text-on-primary-container underline underline-offset-2" href="https://www.mapbox.com/legal/privacy" rel="noopener noreferrer" target="_blank">Mapbox &mdash; Privacy Policy</a></li>
-</ul>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Your rights and choices</h2>
-<p>Because your primary beekeeping data is stored locally, you control it directly: edit or delete records in the App, export data, clear app storage, or uninstall. For rights that may apply in your region (such as access, correction, or deletion relating to data held by our processors), contact us and we will respond as required by law. You can also limit or revoke permissions in your device settings; some features may not work without them.</p>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Changes to this policy</h2>
-<p>We may update this Privacy Policy as the App or our practices change. We will post the revised policy on this page and update the &ldquo;Last updated&rdquo; date. If changes are material, we may provide additional notice (for example, in the App or on this site).</p>
-</section>
-
-<section>
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-3">Contact</h2>
-<p>Questions about this Privacy Policy or our privacy practices? Contact zZz Bees LLC at <strong class="text-on-surface">privacy@buzzza.app</strong>.</p>
-</section>
-</div>
-</main>
-
-<footer class="bg-zinc-950 w-full border-t border-zinc-800/50 pt-12 pb-8">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex flex-col items-center md:items-start gap-4">
-<a href="/" class="flex items-center gap-2 no-underline">
-<span class="text-lg font-bold text-zinc-100 font-headline">buzZza</span>
-</a>
-<p class="text-xs uppercase tracking-widest font-semibold text-zinc-500">
-&copy; 2026 zZz Bees LLC. All rights reserved.
-</p>
-</div>
-<div class="flex items-center gap-8">
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/about">About</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/privacy">Privacy Policy</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/roadmap">Roadmap</a>
-<a class="text-xs uppercase tracking-widest font-semibold text-zinc-500 hover:text-violet-400 transition-colors no-underline" href="/support">Support</a>
-</div>
-</div>
-</footer>
 </body>
 </html>
