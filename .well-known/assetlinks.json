@@ -1,11 +1,14 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.buzzza.app",
       "sha256_cert_fingerprints": [
-        "63:D7:F9:C5:FB:17:E6:F5:FB:3A:5C:21:A5:47:9C:3F:D8:AB:22:9C:C4:5E:4A:4E:C6:39:FD:00:93:FE:00:37"
+        "63:D7:F9:C5:FB:17:E6:F5:FB:3A:5C:21:A5:47:9C:3F:D8:AB:22:9C:C4:5E:4A:4E:C6:39:FD:00:93:FE:00:37",
+        "D1:9C:C9:78:3A:97:56:91:41:21:41:2B:66:98:78:88:DA:50:00:88:B6:B6:02:C8:DD:38:73:17:B9:CD:28:16"
       ]
     }
   }
